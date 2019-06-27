@@ -61,6 +61,10 @@ RUN sudo chown -R 755 /root/vatic/public && \
 
 # Added the data folder, and making it accessible to www-data which is running the dumping code from the php codes.
 RUN mkdir /root/vatic/data && \
+    mkdir /root/vatic/data/videos_in && \
+    mkdir /root/vatic/data/videos_out && \
+    mkdir /root/vatic/data/frames_in && \
+    mkdir /root/vatic/data/pascalannot && \
     sudo chown -R www-data:www-data /root/vatic/data
 
 # Debug tools
