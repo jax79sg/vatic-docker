@@ -75,6 +75,7 @@ cp $PWD/ascripts/myphp.php  /root/vatic/public/directory
 chgrp -R www-data /root/vatic/data
 chmod 775 /root/vatic/data
 
+chown -R www-data:www-data /root/vatic/data
 
 # open up a bash shell on the server
 
