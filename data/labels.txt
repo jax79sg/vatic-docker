@@ -1,1 +1,1 @@
-ak47
+ak47 car person bus
