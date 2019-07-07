@@ -51,7 +51,7 @@ mkdir -p $ANNOTATEDFRAMEPATH
 cd /root/vatic
 
 # load frames and publish. This will print out access URLs.
-turkic load $ID $ANNOTATEDFRAMEPATH $LABELS $TURKOPS
+turkic load $ID $ANNOTATEDFRAMEPATH $LABELS $TURKOPS --length 1500
 
 mkdir -p /root/vatic/public/directory
 
@@ -63,7 +63,7 @@ fi
 
 # replace the 'localhost' of the output to the host's address, and format it into
 # a series of html links. Save this at the /directory page in the website.
-{ turkic publish --offline |\
+{ turkic publish --offline --limit 9000 |\
   tee /dev/fd/3 | sed "s|http://localhost|<a href=\.\.|" |\
                   sed "s|offline|offline> Video Segment <\/a><br>|"  > /root/vatic/public/directory/index.html; } 3>&1
 
